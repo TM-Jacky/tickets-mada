@@ -1,0 +1,96 @@
+p
+{
+ color: rgb(185,0,0);
+}
+ol/*les couleurs s'afficheront en rouge et de taille varié selon les bases de la lecon*/
+{
+ color: green;
+}
+ol/*les couleurs s'afficheront en rouge et de taille */
+{
+ font-size: 1.0em;
+}
+/*test de police*/
+p
+{
+ font-family: Sans serif;
+ width:180%;
+ height :190%
+} 
+
+
+body/*je vais mettre une image de fond*/
+{
+ background: url("logo.png")fixed no-repeat top right, url("fond4.png") fixed;
+
+}
+
+mark, h1
+{
+	box-shadow: 7px 5px 0px gray;
+	text-shadow: 7px 7px 5px black;
+}
+a /*aspect non survolé des liens*/
+{
+ text-decoration: none;
+ color :black;
+ font-style: italic;
+}
+a:hover  /*aspect survolé des liens*/
+{
+text-decoration: none;
+color :green;
+font-style:fat;
+}
+
+a:active /* Quand le visiteur clique sur le lien */
+{
+	background-color:rgb(170,186,148);
+}
+a:visited /*Quand le lien est déjà visité */
+{
+ background-color: rgb(224,146,29);
+}
+
+h1
+{
+	width:400px;/* On a indiqué une largeur (obligatoire) */
+	margin:auto; /* On peut donc demander à ce que le bloc soit centré avec auto */
+	text-align:justify;
+	padding: 12px;
+	margin-bottom: 20px; 
+}
+nav
+{
+	float: left;
+	width:120px
+	border:2px groove;
+}
+footer
+{
+	width:400px;/* On a indiqué une largeur (obligatoire) */
+	margin:auto; /* On peut donc demander à ce que le bloc soit centré avec auto */
+	text-align:justify;
+	padding: 12px;
+	margin-bottom: 20px;
+}
+
+section
+{
+ margin-left: 170px; 
+ border: 1px;
+}
+
+body
+{
+	background: url("neige.png");
+	background-attachment: fixed;
+	
+}
+
+
+
+:required
+{
+ background-color: rgb(248,245,239); 
+}

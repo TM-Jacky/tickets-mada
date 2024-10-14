@@ -1,0 +1,25 @@
+<?php
+// Traitement de l'inscription
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
+    $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+
+    // Chemin vers le fichier users.txt
+    $file = 'users.txt';
+
+    // Vérifier si le fichier existe, sinon le créer avec l'entête
+    if (!file_exists($file)) {
+        file_put_contents($file, "Email;Password;First Name;Last Name\n");
+    }
+
+    // Ajouter l'utilisateur au fichier
+    $user_data = "$email;$password;$firstname;$lastname\n";
+    file_put_contents($file, $user_data, FILE_APPEND);
+
+    // Redirection après inscription
+    header("Location: connexion_test.html");
+    exit();
+}
+?>

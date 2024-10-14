@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #cce7ff, #f0f9ff, #e1ffdd, #d6f5d6);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.container {
+    max-width: 400px;
+    width: 90%;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.tabs button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: #f0f0f0;
+    color: black;
+    font-weight: bold;
+    flex-grow: 1;
+    transition: border-bottom 0.3s;
+}
+
+.tabs button.active {
+    border-bottom: 3px solid #007bff;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.phone-container {
+    display: flex;
+    align-items: center;
+}
+
+#country-code {
+    width: 30%;
+    margin-right: 5px;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+}
+
+.password-container input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.toggle-password {
+    cursor: pointer;
+    margin-left: -30px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: #e1e1e1;
+}
+
+.social-login {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.social-button {
+    flex: 1;
+    margin: 0 5px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+#google-login {
+    background: linear-gradient(135deg, #db4437, #db4437);
+}
+
+#facebook-login {
+    background: linear-gradient(135deg, #4CAF50, #3B8C2A);
+}
+
+#google-signup {
+    background: linear-gradient(135deg, #db4437, #db4437);
+}
+
+#facebook-signup {
+    background: linear-gradient(135deg, #4CAF50, #3B8C2A);
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+}
+
+.password-strength {
+    height: 5px;
+    margin: 5px 0;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.close {
+    cursor: pointer;
+}

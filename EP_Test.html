@@ -1,0 +1,625 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Espace Client</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #cce7ff, #f0f9ff, #e1ffdd, #d6f5d6);
+    height: 100vh;
+    overflow: hidden; /* Empêche le défilement */
+    position: relative; /* Nécessaire pour positionner les formes */
+}
+
+.falling-shape {
+    position: absolute;
+    top: -50px; /* Commence hors de l'écran */
+    animation: fall linear infinite; /* Animation de chute */
+}
+
+/* Animation de chute */
+@keyframes fall {
+    
+  
+0% {
+        transform: translateY(0); /* Départ */
+    }
+    100% {
+        transform: translateY(100vh); /* Tombe jusqu'en bas */
+    }
+}
+
+/* Forme étoile */
+.star {
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    clip-path: polygon(50% 0%, 65% 35%, 100% 35%, 75% 57%, 82% 90%, 50% 70%, 18% 90%, 25% 57%, 0% 35%, 35% 35%);
+    left: calc(10% + (90% * var(--random-position)));
+    animation-duration: calc(2s + var(--fall-duration)); /* Durée de la chute variable */
+}
+
+/* Forme lune */
+.moon {
+    width: 30px;
+    height: 30px;
+    background-color: lightblue;
+    border-radius: 50%;
+    position: relative;
+    left: calc(10% + (90% * var(--random-position)));
+}
+
+/* Forme carré */
+.square {
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    left: calc(10% + (90% * var(--random-position)));
+}
+
+/* Forme triangle */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid red;
+    left: calc(10% + (90% * var(--random-position)));
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #cce7ff, #f0f9ff, #e1ffdd, #d6f5d6);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.container {
+    max-width: 400px;
+    width: 90%;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.tabs button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: #f0f0f0;
+    color: black;
+    font-weight: bold;
+    flex-grow: 1;
+    transition: border-bottom 0.3s;
+}
+
+.tabs button.active {
+    border-bottom: 3px solid #007bff;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.phone-container {
+    display: flex;
+    align-items: center;
+}
+
+#country-code {
+    width: 30%;
+    margin-right: 5px;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+}
+
+.password-container input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.toggle-password {
+    cursor: pointer;
+    margin-left: -30px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: #e1e1e1;
+}
+
+.social-login {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.social-button {
+    flex: 1;
+    margin: 0 5px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+#google-login {
+    background: linear-gradient(135deg, #db4437, #db4437);
+}
+
+#facebook-login {
+    background: linear-gradient(135deg, #4CAF50, #3B8C2A);
+}
+
+#google-signup {
+    background: linear-gradient(135deg, #db4437, #db4437);
+}
+
+#facebook-signup {
+    background: linear-gradient(135deg, #4CAF50, #3B8C2A);
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+}
+
+.password-strength {
+    height: 5px;
+    margin: 5px 0;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.close {
+    cursor: pointer;
+}
+
+</style>
+
+<body>
+
+
+
+    <div class="falling-shape star"></div>
+    <div class="falling-shape moon"></div>
+    <div class="falling-shape square"></div>
+    <div class="falling-shape triangle"></div>
+
+    <div class="container">
+        <div class="tabs">
+            <button id="login-tab" class="active">Connexion</button>
+            <button id="signup-tab">Inscription</button>
+        </div>
+
+        <div id="notification" style="display: none;"></div>
+
+        <div id="popup" class="popup">
+            <span id="close-popup" class="close">&times;</span>
+            <p id="popup-message"></p>
+        </div>
+
+        <div id="login-section">
+            <form id="login-form" action="votre_script_de_verification.php" method="POST">
+                <input type="email" id="login-email" name="login-email" placeholder="Email" required>
+                
+                <div class="password-container">
+                    <input type="password" id="login-password" name="login-password" placeholder="Mot de passe" required>
+                    <span class="toggle-password" id="toggle-login-password"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                </div>
+                
+                <div class="g-recaptcha" data-sitekey="6LdmuFcqAAAAADgGmrTCy0Im9suuqRL32a3Omp1N"></div>
+                
+                <button type="submit" class="login-button">Se connecter</button>
+                
+                <div class="social-login">
+                    <button id="google-login" class="social-button">Se connecter avec Google</button>
+                    <button id="facebook-login" class="social-button">Se connecter avec Facebook</button>
+                </div>
+                
+                <a href="reinitialiser_mon_mot_de_passe.html" style="display: block; margin-top: 10px;">Réinitialiser le mot de passe</a>
+            </form>
+        </div>
+
+        <div id="signup-section" style="display: none;">
+            <form id="signup-form" action="votre_script_d_inscription.php" method="POST">
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Civilité</option>
+                    <option value="Mr">Monsieur</option>
+                    <option value="Mme">Madame</option>
+                </select>
+                <input type="text" id="signup-first-name" name="signup-first-name" placeholder="Prénom" required>
+                <input type="text" id="signup-last-name" name="signup-last-name" placeholder="Nom" required>
+                <input type="email" id="signup-email" name="signup-email" placeholder="Email" required>
+                <select id="age" name="age" required>
+                    <option value="" disabled selected>Âge</option>
+                    <script>
+                        for (let i = 1; i <= 100; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+                
+                <div class="phone-container">
+                    <select id="country-code" name="country-code" required>
+                        <option value="MDG">MDG (+261)</option>
+                        <option value="FR">FR (+33)</option>
+                        <option value="US">US (+1)</option>
+                        <option value="GB">GB (+44)</option>
+                        <option value="DE">DE (+49)</option>
+                        <option value="IT">IT (+39)</option>
+                        <option value="CA">CA (+1)</option>
+                        <option value="ES">ES (+34)</option>
+                        <option value="PT">PT (+351)</option>
+                        <option value="AU">AU (+61)</option>
+                        <option value="IN">IN (+91)</option>
+                    </select>
+                    <input type="tel" id="signup-phone" name="signup-phone" placeholder="Numéro de téléphone" required>
+                </div>
+
+                <div class="password-container">
+                    <input type="password" id="signup-password" name="signup-password" placeholder="Mot de passe" required>
+                    <span class="toggle-password" id="toggle-password"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                </div>
+                
+                <div class="password-strength" id="password-strength"></div>
+
+                <div class="password-container">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmer le mot de passe" required>
+                    <span class="toggle-password" id="toggle-confirm-password"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                </div>
+
+                <button type="submit" class="signup-button">S'inscrire</button>
+                
+                <div class="social-login">
+                    <button id="google-signup" class="social-button">S'inscrire avec Google</button>
+                    <button id="facebook-signup" class="social-button">S'inscrire avec Facebook</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $recaptcha_secret = '6LdmuFcqAAAAAGuimxqeId4u5hPXt92_SlRGoEA_'; // Remplacez par votre clé secrète
+    $recaptcha_response = $_POST['g-recaptcha-response'];
+
+    // Vérifier la réponse de reCAPTCHA
+    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response");
+    $responseKeys = json_decode($response, true);
+
+    if (intval($responseKeys["success"]) !== 1) {
+        echo 'Vérification reCAPTCHA échouée. Veuillez réessayer.';
+    } else {
+        echo 'Vérification reCAPTCHA réussie. Connexion autorisée.';
+        // Redirection ou autre logique pour la connexion ici
+    }
+}
+?>
+
+
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const loginTab = document.getElementById("login-tab");
+    const signupTab = document.getElementById("signup-tab");
+    const loginSection = document.getElementById("login-section");
+    const signupSection = document.getElementById("signup-section");
+
+    // Bascule vers l'onglet de connexion
+    loginTab.addEventListener("click", function () {
+        loginTab.classList.add("active");
+        signupTab.classList.remove("active");
+        loginSection.style.display = "block";
+        signupSection.style.display = "none";
+    });
+
+    // Bascule vers l'onglet d'inscription
+    signupTab.addEventListener("click", function () {
+        signupTab.classList.add("active");
+        loginTab.classList.remove("active");
+        signupSection.style.display = "block";
+        loginSection.style.display = "none";
+    });
+
+    // Gestion des icônes de visibilité du mot de passe
+    const togglePassword = document.getElementById("toggle-password");
+    const toggleConfirmPassword = document.getElementById("toggle-confirm-password");
+    const toggleLoginPassword = document.getElementById("toggle-login-password");
+    const passwordInput = document.getElementById("signup-password");
+    const confirmPasswordInput = document.getElementById("confirm-password");
+    const loginPasswordInput = document.getElementById("login-password");
+    const passwordStrengthIndicator = document.getElementById("password-strength");
+
+    // Afficher ou masquer le mot de passe d'inscription
+    togglePassword.addEventListener("click", function () {
+        const type = passwordInput.type === "password" ? "text" : "password";
+        passwordInput.type = type;
+        this.querySelector('i').classList.toggle('fa-eye');
+        this.querySelector('i').classList.toggle('fa-eye-slash');
+    });
+
+    // Afficher ou masquer la confirmation du mot de passe
+    toggleConfirmPassword.addEventListener("click", function () {
+        const type = confirmPasswordInput.type === "password" ? "text" : "password";
+        confirmPasswordInput.type = type;
+        this.querySelector('i').classList.toggle('fa-eye');
+        this.querySelector('i').classList.toggle('fa-eye-slash');
+    });
+
+    // Afficher ou masquer le mot de passe de connexion
+    toggleLoginPassword.addEventListener("click", function () {
+        const type = loginPasswordInput.type === "password" ? "text" : "password";
+        loginPasswordInput.type = type;
+        this.querySelector('i').classList.toggle('fa-eye');
+        this.querySelector('i').classList.toggle('fa-eye-slash');
+    });
+
+    // Évaluer la force du mot de passe
+    passwordInput.addEventListener("input", function () {
+        const password = this.value;
+        let strength = 0;
+
+        if (password.length >= 8) strength++;
+        if (/[A-Z]/.test(password)) strength++;
+        if (/[0-9]/.test(password)) strength++;
+        if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+        passwordStrengthIndicator.style.backgroundColor =
+            strength === 4 ? "green" :
+            strength === 3 ? "yellow" :
+            "red";
+    });
+
+    // Gérer l'envoi du formulaire d'inscription
+    const signupForm = document.getElementById("signup-form");
+    signupForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById("signup-email").value;
+        const code = Math.floor(100000 + Math.random() * 900000); // Génération d'un code aléatoire à 6 chiffres
+        const message = `Merci de vous être inscrit. Votre code de confirmation est : ${code}`;
+
+        // Afficher un message de notification
+        const notification = document.getElementById("notification");
+        notification.style.display = "block";
+        notification.innerText = message;
+        notification.style.color = "green";
+
+        // Simulation d'envoi d'un e-mail
+        setTimeout(() => {
+            alert(`Un e-mail de confirmation a été envoyé à ${email} avec le code : ${code}`);
+            signupSection.style.display = "none"; // Masquer la section d'inscription
+            loginSection.style.display = "block"; // Afficher la section de connexion
+            loginTab.classList.add("active");
+            signupTab.classList.remove("active");
+        }, 2000);
+    });
+});
+
+
+// Gérer l'envoi du formulaire de connexion
+const loginForm = document.getElementById("login-form");
+loginForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Empêche le rechargement de la page
+
+    // Simulation de la connexion
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    // Exemple de vérification (remplacez ceci par votre logique réelle)
+    if (email === "test@example.com" && password === "password") {
+        // Stocker les informations de l'utilisateur dans le localStorage
+        localStorage.setItem("userEmail", email);
+        
+        // Redirection vers l'espace client
+        window.location.href = "espace_client.html"; // Changez cette URL selon vos besoins
+    } else {
+        // Affichez un message d'erreur
+        const notification = document.getElementById("notification");
+        notification.style.display = "block";
+        notification.innerText = "Identifiants incorrects.";
+        notification.style.color = "red";
+    }
+});
+
+// Gérer l'envoi du formulaire d'inscription
+const signupForm = document.getElementById("signup-form");
+signupForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(signupForm);
+
+    // Envoi des données au serveur
+    fetch('votre_script_d_inscription.php', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Afficher un message de notification
+            const notification = document.getElementById("notification");
+            notification.style.display = "block";
+            notification.innerText = "Inscription réussie ! Un e-mail de confirmation a été envoyé.";
+            notification.style.color = "green";
+
+            // Passer à la section de connexion après un délai
+            setTimeout(() => {
+                loginSection.style.display = "block";
+                signupSection.style.display = "none";
+                loginTab.classList.add("active");
+                signupTab.classList.remove("active");
+            }, 2000);
+        } else {
+            // Afficher le message d'erreur
+            const notification = document.getElementById("notification");
+            notification.style.display = "block";
+            notification.innerText = data.message; // Afficher le message d'erreur du serveur
+            notification.style.color = "red";
+        }
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+    });
+});
+
+
+const shapes = document.querySelectorAll('.falling-shape');
+
+shapes.forEach(shape => {
+    // Génère une position aléatoire pour chaque forme
+    shape.style.setProperty('--random-position', Math.random());
+    
+    // Génère une durée de chute aléatoire pour chaque forme
+    shape.style.setProperty('--fall-duration', Math.random() * 3 + 's');
+    
+    // Définir un délai aléatoire pour chaque forme pour un effet d'animation échelonné
+    const delay = Math.random() * 5; // Délai aléatoire entre 0 et 5 secondes
+    shape.style.animationDelay = `${delay}s`;
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const loginForm = document.getElementById("login-form");
+    const signupForm = document.getElementById("signup-form");
+    const notification = document.getElementById("notification");
+    const popup = document.getElementById("popup");
+    const closePopup = document.getElementById("close-popup");
+    const logoutLink = document.getElementById("logout-link");
+
+    // Gestion de l'inscription
+    signupForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("signup-email").value;
+        const password = document.getElementById("signup-password").value;
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+        if (users.find(user => user.email === email)) {
+            showNotification("Cet email est déjà utilisé.", "error");
+            return;
+        }
+
+        users.push({ email, password });
+        localStorage.setItem("users", JSON.stringify(users));
+        signupForm.reset();
+        showNotification("Inscription réussie !", "success");
+        popup.style.display = "block"; // Affiche le pop-up de confirmation
+        setTimeout(() => {
+            popup.style.display = "none"; // Cache le pop-up après 3 secondes
+        }, 3000);
+    });
+
+    // Gestion de la connexion
+    loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+        const storedUser = users.find(user => user.email === email && user.password === password);
+
+        if (storedUser) {
+            showNotification("Connexion réussie !");
+            localStorage.setItem("loggedInUser", JSON.stringify(storedUser));
+            loginForm.reset();
+            // Redirection vers la page de tableau de bord
+            window.location.href = "dashboard.html"; // Redirection vers dashboard.html
+        } else {
+            showNotification("Email ou mot de passe incorrect.", "error");
+        }
+    });
+
+    // Gestion de la déconnexion
+    logoutLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "EP_Test.html"; // Rediriger vers la page de connexion
+    });
+
+    // Fonction de notification
+    function showNotification(message, type = "success") {
+        notification.textContent = message;
+        notification.className = type === "success" ? "success" : "error";
+        notification.style.display = "block";
+        setTimeout(() => {
+            notification.style.display = "none";
+        }, 3000);
+    }
+
+    // Gestion du pop-up
+    closePopup.onclick = function() {
+        popup.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    }
+});
+
+</script>
+</body>
+</html>

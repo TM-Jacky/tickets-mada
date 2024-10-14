@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test0'</title>
+    <link rel="stylesheet" href="mon_avis.css">
+</head>
+<body>
+
+    <!-- Petit index "Mon Avis" flottant -->
+    <div id="feedback-index">
+        <span>Mon Avis</span>
+    </div>
+
+    <!-- Pop-up d'avis client -->
+    <div id="feedback-popup" class="popup">
+        <div class="popup-content">
+            <h2>Donnez votre avis</h2>
+            <p>Votre avis compte pour nous. Veuillez choisir votre degré de satisfaction.</p>
+
+            <!-- Indicateurs de satisfaction -->
+            <div class="satisfaction">
+                <div class="emoji" data-value="1"></div>
+                <div class="emoji" data-value="2"></div>
+                <div class="emoji" data-value="3"></div>
+                <div class="emoji" data-value="4"></div>
+                <div class="emoji" data-value="5"></div>
+            </div>
+
+            <!-- Formulaire pour problème, suggestion ou compliment -->
+            <div id="feedback-form" class="feedback-form hidden">
+                <!-- Contenu dynamique basé sur la sélection -->
+                <div id="problem-options" class="hidden">
+                    <p>Quels sont les problèmes que vous rencontrez ?</p>
+                    <label><input type="checkbox"> Problème de connexion</label><br>
+                    <label><input type="checkbox"> Lenteur de chargement</label><br>
+                    <label><input type="checkbox"> Erreur d'affichage</label><br>
+                    <label><input type="checkbox"> Autre</label><br>
+                    <textarea id="autre-probleme" class="hidden" placeholder="Veuillez décrire les problèmes..."></textarea>
+                </div>
+                
+                <div id="suggestion-options" class="hidden">
+                    <p>Nous apprécions sincèrement vos commentaires.</p>
+                    <textarea placeholder="Votre suggestion..."></textarea>
+                    <p>Souhaitez-vous ajouter une capture d’écran ?</p>
+                    <label for="screenshot-upload" class="camera-icon">📸</label>
+                    <input id="screenshot-upload" type="file" class="hidden">
+                </div>
+                
+                <div id="compliment-options" class="hidden">
+                    <p>Merci pour vos compliments ! Nous serons ravis de les lire.</p>
+                    <textarea placeholder="Vos compliments..."></textarea>
+                </div>
+
+                <button class="send-btn">Envoyer</button>
+            </div>
+
+            <!-- Pop-up de remerciement -->
+            <div id="thankyou-popup" class="popup hidden">
+                <h2>Merci pour votre avis !</h2>
+                <p>Votre participation à l'amélioration du site est précieuse.</p>
+            </div>
+
+        </div>
+        <span class="close-btn" onclick="closePopup()">×</span>
+    </div>
+
+    <script src="mon_avis.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+/* Styles spécifiques à la page en_savoir_plus */
+
+/* Bannière et Titre */
+.en-savoir-plus header {
+    background: linear-gradient(to right, #e53935, #00c853);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-bottom: 3px solid #ddd;
+    z-index: 999;
+}
+
+.en-savoir-plus .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.en-savoir-plus .site-title {
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 3em;
+    margin: 0;
+}
+
+/* Image Principale */
+.en-savoir-plus .main-image {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: -80px auto 20px; /* Superposition légère */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* Section Texte */
+.en-savoir-plus .text-section {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: -50px; /* Superposition légère avec l'image principale */
+}
+
+/* Texte */
+.en-savoir-plus .text-section h2 {
+    font-size: 2.5em;
+    color: #e53935;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.en-savoir-plus .text-section p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Image Inférieure */
+.en-savoir-plus .bottom-image {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* Positionnement du bouton Réservez Maintenant */
+.reserve-button {
+    display: inline-block;
+    background: linear-gradient(to right, #e53935, #ff7043);
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: bounceIn 1s ease-out;
+    text-align: center;
+    position: fixed; /* Fixe le bouton à une position spécifique */
+    right: 20px; /* Espace du bord droit */
+    bottom: 20px; /* Espace du bord inférieur */
+    z-index: 1000; /* Assure que le bouton soit au-dessus des autres éléments */
+}
+
+.reserve-button:hover {
+    background: linear-gradient(to right, #ff7043, #e53935);
+    transform: scale(1.05);
+}

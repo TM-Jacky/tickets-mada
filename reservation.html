@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EP_Test.css">
+    <title>Réservation - Taxi-Brousse</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Réserver un Taxi-Brousse</h1>
+        <form id="reservation-form">
+            <label for="date">Date :</label>
+            <input type="date" id="date" required>
+            <label for="destination">Destination :</label>
+            <input type="text" id="destination" required>
+            <button type="submit">Réserver</button>
+        </form>
+        <h3>Mes Réservations</h3>
+        <ul id="reservation-list"></ul>
+        <button id="logout-link">Déconnexion</button>
+    </div>
+    <script src="reservation.js"></script>
+</body>
+</html>

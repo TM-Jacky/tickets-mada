@@ -1,0 +1,173 @@
+/* Styles globaux */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Evite le débordement horizontal */
+}
+
+/* Bannière et Titre */
+header {
+    background: linear-gradient(to right, #e53935, #00c853);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-bottom: 3px solid #ddd;
+    z-index: 999;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-title {
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 3em;
+    margin: 0;
+}
+
+/* Image Principale */
+.en-savoir-plus .main-image {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: -80px auto 20px; /* Superposition légère */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* Section Texte */
+.en-savoir-plus .text-section {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Texte */
+.en-savoir-plus .text-section h2 {
+    font-size: 2.5em;
+    color: #e53935;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.en-savoir-plus .text-section p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Image Inférieure */
+.en-savoir-plus .bottom-image {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* Bouton Réservez Maintenant */
+.en-savoir-plus .reserve-button {
+    display: inline-block;
+    background: linear-gradient(to right, #e53935, #ff7043);
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: bounceIn 1s ease-out;
+    text-align: center;
+    position: fixed;
+    bottom: 80px; /* Écart du bas de la page */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.en-savoir-plus .reserve-button:hover {
+    background: linear-gradient(to right, #ff7043, #e53935);
+    transform: scale(1.05);
+}
+
+.en-savoir-plus .reserve-button:active {
+    animation: clickEffect 0.2s ease;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes clickEffect {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.9);
+    }
+}
+
+/* Marges supplémentaires pour la section spécifique */
+.en-savoir-plus .section {
+    margin-bottom: 40px;
+}

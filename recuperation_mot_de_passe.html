@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réinitialisation du mot de passe - Tickets Mada</title>
+    <link rel="stylesheet" href="test1'.css">
+    <link rel="stylesheet" href="recuperation_mot_de_passe.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Réinitialisation du mot de passe</h1>
+            <nav>
+                <ul>
+                    <li><a href="Test0'.html">Accueil</a></li>
+                    <li><a href="en_savoir_plus.html">En savoir plus</a></li>
+                    <li><a href="connexion.html">Se connecter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="recuperation">
+            <h2>Réinitialisation du mot de passe</h2>
+            <form method="post" action="traitement_recuperation.php">
+                <label for="email">Adresse mail :</label>
+                <input type="email" name="email" id="email" required><br>
+
+                <input type="submit" value="Envoyer le lien de réinitialisation">
+            </form>
+        </section>
+    </main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Première ligne avec colonnes -->
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Nous connaitre</h3>
+                <ul>
+                    <li><a href="en_savoir_plus.html">À propos de nous</a></li>
+                    <li><a href="responsabilité_sociale_et_environnementale.html">Responsabilité Sociale et Environnementale</a></li>
+                    <li><a href="demande_de_collaboration.html">Demande de collaboration</a></li>
+                    <li><a href="noter_notre_prestation.html">Noter notre prestation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Nos idées de voyage</h3>
+                <ul>
+                    <li><a href="nos_destinations.html">Nos destinations</a></li>
+                    <li><a href="nos_bons_plans.html">Nos bons plans</a></li>
+                    <li><a href="voyage_sur_mesure.html">Voyage sur mesure</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Notre Service Client</h3>
+                <ul>
+                    <li><a href="mailto:rakotomalalajacky09@gmail.com">Contactez-nous</a></li>
+                    <li><a href="#" id="openPopup">Service de réclamation</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Deuxième ligne avec images et réseaux sociaux -->
+        <div class="footer-extra">
+            <!-- Application Section -->
+            <div class="footer-app">
+                <h3>L'application Tickets Mada</h3>
+                <a href="https://apps.apple.com" target="_blank"><img src="Images/image_app_store.png" alt="App Store" class="store-img"></a>
+                <a href="https://play.google.com" target="_blank"><img src="Images/image_google_play.png" alt="Google Play" class="store-img"></a>
+            </div>
+
+            <!-- Réseaux Sociaux Section -->
+            <div class="footer-social">
+                <h3>Restez informé(e)</h3>
+                <p>Réseaux sociaux</p>
+                <div class="social-icons">
+                    <a href="https://youtube.com" target="_blank"><img src="Images/youtube_icon.png" alt="YouTube" class="social-icon"></a>
+                    <a href="https://x.com" target="_blank"><img src="Images/x_icon.png" alt="X" class="social-icon"></a>
+                    <a href="https://facebook.com" target="_blank"><img src="Images/facebook_icon.png" alt="Facebook" class="social-icon"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="Images/instagram_icon.png" alt="Instagram" class="social-icon"></a>
+                    <a href="https://wa.me" target="_blank"><img src="Images/whatsapp_icon.png" alt="WhatsApp" class="social-icon"></a>
+                    <a href="https://tiktok.com" target="_blank"><img src="Images/tiktok_icon.png" alt="TikTok" class="social-icon"></a>
+                    <a href="https://linkedin.com" target="_blank"><img src="Images/linkedin_icon.png" alt="LinkedIn" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Pop-up pour le service de réclamation -->
+<div id="popup" class="popup-container">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Service de Réclamation</h2>
+        <p>Contactez-nous via l'un des moyens suivants :</p>
+        <ul>
+            <li>Email: <a href="mailto:rakotomalalajacky09@gmail.com">Envoyer un email</a></li>
+            <li>Téléphone: <a href="tel:+261340000000">Appeler maintenant</a></li>
+            <li>WhatsApp: <a href="https://wa.me/261340000000" target="_blank">Nous contacter sur WhatsApp</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- JS pour le pop-up -->
+<script src="footer.js"></script>
+</body>
+</html>

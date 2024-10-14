@@ -1,0 +1,37 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupération des données du formulaire
+    $firstName = $_POST['signup-first-name'];
+    $lastName = $_POST['signup-last-name'];
+    $email = $_POST['signup-email'];
+    $password = $_POST['signup-password'];
+    // Vous pouvez aussi récupérer les autres informations
+
+    // Hashage du mot de passe avant de l'enregistrer
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // Ici, vous devez enregistrer les informations de l'utilisateur dans votre base de données
+    // Remplacez cette partie par votre logique d'enregistrement
+    $isSaved = saveUserToDatabase($firstName, $lastName, $email, $hashedPassword); // Implémentez cette fonction
+
+    if ($isSaved) {
+        // Envoi de l'email de confirmation
+        $to = $email;
+        $subject = "Confirmation de votre inscription";
+        $message = "Merci de vous être inscrit, $firstName $lastName !";
+        $headers = "From: no-reply@votresite.com\r\n";
+        mail($to, $subject, $message, $headers); // Vérifiez que le serveur peut envoyer des emails
+        
+        // Réponse JSON pour indiquer que l'inscription a réussi
+        echo json_encode(['success' => true]);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Erreur lors de l\'inscription.']);
+    }
+}
+
+// Exemple de fonction pour sauvegarder un utilisateur
+function saveUserToDatabase($firstName, $lastName, $email, $hashedPassword) {
+    // Implémentez votre logique d'enregistrement ici, par exemple, insérer dans une base de données
+    return true; // Modifiez cela selon votre logique d'enregistrement
+}
+?>

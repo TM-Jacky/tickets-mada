@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recommandations, astuces et avantages d'utiliser le service Tickets Mada pour vos trajets locaux à Madagascar.">
+    <title>Recommandations - Tickets Mada</title>
+    <link rel="stylesheet" href="test1'.css">
+    <link rel="stylesheet" href="mon_avis.css">
+    <link rel="stylesheet" href="recommandations.css"> <!-- Lien vers le CSS spécifique à cette page -->
+    <style>
+        /* Styles pour la page de recommandations */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #007bff;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .section-content {
+            margin-bottom: 30px;
+        }
+
+        .section-content p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .benefits-list, .tips-list {
+            margin-bottom: 30px;
+        }
+
+        .benefits-list ul, .tips-list ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .benefits-list li, .tips-list li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.9); /* Fond blanc transparent */
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .footer-column ul li a:hover {
+            color: #007bff;
+        }
+
+        .footer-extra {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-app, .footer-social {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+
+        .store-img, .social-icon {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+        }
+
+/* Style de la modale */
+.modal {
+    display: none; /* Cacher par défaut */
+    position: fixed;
+    z-index: 999; /* S'assurer qu'elle est au-dessus du contenu */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Arrière-plan semi-transparent */
+}
+
+/* Contenu de la modale */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%; /* Taille de la modale */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: fadeIn 0.5s;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Bouton de fermeture */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Section des emojis */
+.emoji-section label {
+    font-size: 24px;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.emoji-section label:hover {
+    transform: scale(1.2); /* Effet d'agrandissement au survol */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Style du formulaire dynamique */
+textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Emoji section style with hover effect */
+.emoji-section label {
+    font-size: 24px;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.emoji-section label:hover {
+    transform: scale(1.2); /* Animation d'agrandissement au survol */
+}
+
+/* Affichage de la note sélectionnée */
+.selected-score {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="site-title">Recommandations</h1>
+            <nav>
+                <ul>
+                    <li><a href="Test0'.html">Accueil</a></li>
+                    <li><a href="en_savoir_plus.html">En savoir plus</a></li>
+                    <li><a href="mailto:rakotomalalajacky09@gmail.com">Nous contacter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="section">
+            <h2 class="section-title">Nos Recommandations</h2>
+            <div class="section-content"> <br/><br/><br/>
+                <p>Chez Tickets Mada, nous nous efforçons de vous offrir la meilleure expérience possible pour vos trajets locaux à Madagascar. Pour maximiser votre satisfaction et profiter pleinement de notre service, nous vous proposons les recommandations suivantes :</p>
+                
+                <h3>1. Planifiez vos Réservations à l'Avance</h3>
+                <p>Pour garantir votre place et bénéficier des meilleures options, nous vous recommandons de planifier vos réservations au moins une semaine à l'avance. Cela vous permettra de choisir parmi les meilleurs créneaux horaires et d'éviter les déceptions de dernière minute.</p>
+                
+                <h3>2. Utilisez notre Service de Paiement Sécurisé</h3>
+                <p>Nous offrons un service de paiement en ligne sécurisé pour vous assurer une transaction fluide et sans tracas. Assurez-vous de toujours utiliser des méthodes de paiement sécurisées et vérifiez que vous êtes sur une connexion protégée lors de la saisie de vos informations de paiement.</p>
+                
+                <h3>3. Consultez les Horaires Régulièrement</h3>
+                <p>Les horaires peuvent parfois changer en fonction de la saison ou des conditions locales. Consultez régulièrement notre site pour obtenir les informations les plus récentes et éviter tout désagrément.</p>
+                
+                <h3>4. Préparez-vous pour votre Voyage</h3>
+                <p>Avant de partir, assurez-vous d'avoir tous les documents nécessaires, comme votre billet et une pièce d'identité. Si vous voyagez avec des objets encombrants, vérifiez les politiques de notre compagnie sur les bagages pour éviter tout problème.</p>
+                
+                <h3>5. Faites-nous Part de Vos Suggestions</h3>
+                <p>Nous apprécions vos retours et suggestions pour améliorer notre service. N'hésitez pas à nous faire part de vos commentaires, que ce soit par email ou via notre formulaire de feedback en ligne.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Les Avantages de Tickets Mada</h2>
+            <div class="section-content benefits-list">
+                <h3>Les Bénéfices de Choisir Tickets Mada</h3>
+                <ul>
+                    <li><strong>Réservation Simplifiée :</strong> Réservez vos trajets en quelques clics depuis le confort de votre maison. Notre plateforme en ligne est simple à utiliser et vous permet de gérer vos réservations facilement.</li>
+                    <li><strong>Service Client Dédié :</strong> Notre équipe est disponible pour répondre à toutes vos questions et résoudre vos problèmes. Vous pouvez nous contacter par email ou téléphone à tout moment.</li>
+                    <li><strong>Transparence Totale :</strong> Nous vous garantissons des informations claires sur les horaires, les tarifs et les services. Pas de surprises ni de frais cachés.</li>
+                    <li><strong>Options Flexibles :</strong> Choisissez parmi une gamme d'options adaptées à vos besoins, que ce soit pour un voyage rapide ou pour une excursion plus longue.</li>
+                    <li><strong>Satisfaction Client :</strong> Notre priorité est votre satisfaction. Nous faisons tout notre possible pour offrir un service de qualité et nous prenons vos commentaires au sérieux.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Astuces pour Utiliser Tickets Mada</h2>
+            <div class="section-content tips-list">
+                <h3>Astuces pour Optimiser Votre Utilisation</h3>
+                <ul>
+                    <li><strong>Créer un Compte :</strong> En créant un compte sur notre site, vous pourrez suivre l'historique de vos réservations, gérer vos informations personnelles et bénéficier d'offres exclusives.</li>
+                    <li><strong>Activer les Notifications :</strong> Activez les notifications pour recevoir des alertes sur les mises à jour importantes concernant vos trajets, telles que les changements d'horaires ou les offres spéciales.</li>
+                    <li><strong>Consulter les Avis :</strong> Avant de réserver, consultez les avis d'autres utilisateurs pour avoir une idée de la qualité du service et des expériences partagées.</li>
+                    <li><strong>Préférences de Voyage :</strong> Mettez à jour vos préférences de voyage dans votre compte pour recevoir des recommandations personnalisées en fonction de vos habitudes et préférences.</li>
+                    <li><strong>Utiliser les Offres Promotionnelles :</strong> Ne manquez pas les offres spéciales et les promotions en cours pour économiser sur vos trajets. Consultez régulièrement notre site pour ne pas passer à côté de bonnes affaires.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Première ligne avec colonnes -->
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Nous connaitre</h3>
+                <ul>
+                    <li><a href="en_savoir_plus.html">À propos de nous</a></li>
+                    <li><a href="responsabilite_sociale_et_environnementale.html">Responsabilité Sociale et Environnementale</a></li>
+                    <li><a href="demande_de_collaboration.html">Demande de collaboration</a></li>
+                    <li><a id="openModalBtn">Noter notre prestation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Nos idées de voyage</h3>
+                <ul>
+                    <li><a href="nos_destinations.html">Nos destinations</a></li>
+                    <li><a href="nos_bons_plans.html">Nos bons plans</a></li>
+                    <li><a href="recommandations.html">Recommandations</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Nos services</h3>
+                <ul>
+                    <li><a href="conditions_generales.html">Conditions Générales de Vente</a></li>
+                    <li><a href="faq.html">Foire aux Questions</a></li>
+                    <li><a href="#" id="openPopup">Service de réclamation</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Deuxième ligne avec images et réseaux sociaux -->
+        <div class="footer-extra">
+            <!-- Application Section -->
+            <div class="footer-app">
+                <h3>L'application Tickets Mada</h3>
+                <a href="https://apps.apple.com" target="_blank"><img src="Images/image_app_store.png" alt="App Store" class="store-img"></a>
+                <a href="https://play.google.com" target="_blank"><img src="Images/image_google_play.png" alt="Google Play" class="store-img"></a>
+            </div>
+
+            <!-- Réseaux Sociaux Section -->
+            <div class="footer-social">
+                <h3>Restez informé(e)</h3>
+                <p>Réseaux sociaux</p>
+                <div class="social-icons">
+                    <a href="https://youtube.com" target="_blank"><img src="Images/youtube_icon.png" alt="YouTube" class="social-icon"></a>
+                    <a href="https://x.com" target="_blank"><img src="Images/x_icon.png" alt="X" class="social-icon"></a>
+                    <a href="https://facebook.com" target="_blank"><img src="Images/facebook_icon.png" alt="Facebook" class="social-icon"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="Images/instagram_icon.png" alt="Instagram" class="social-icon"></a>
+                    <a href="https://wa.me" target="_blank"><img src="Images/whatsapp_icon.png" alt="WhatsApp" class="social-icon"></a>
+                    <a href="https://tiktok.com" target="_blank"><img src="Images/tiktok_icon.png" alt="TikTok" class="social-icon"></a>
+                    <a href="https://linkedin.com" target="_blank"><img src="Images/linkedin_icon.png" alt="LinkedIn" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Pop-up pour le service de réclamation -->
+<div id="popup" class="popup-container">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Service de Réclamation</h2>
+        <p>Contactez-nous via l'un des moyens suivants :</p>
+        <ul>
+            <li>Email: <a href="mailto:rakotomalalajacky09@gmail.com">Envoyer un email</a></li>
+            <li>Téléphone: <a href="tel:+261340000000">Appeler maintenant</a></li>
+            <li>WhatsApp: <a href="https://wa.me/261340000000" target="_blank">Nous contacter sur WhatsApp</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Fenêtre modale -->
+<div id="noterModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Contenu de noter_notre_prestation.html ici -->
+        <h2 style="color:red; text-align:center;">Noter notre prestation</h2>
+        <form id="satisfaction-form">
+            <!-- Section pour les emojis -->
+            <div class="emoji-section" style="text-align:center; margin-bottom:20px;">
+                <label><input type="radio" name="satisfaction" value="1"><span>😠</span></label>
+                <label><input type="radio" name="satisfaction" value="2"><span>😕</span></label>
+                <label><input type="radio" name="satisfaction" value="3"><span>😐</span></label>
+                <label><input type="radio" name="satisfaction" value="4"><span>😶</span></label>
+                <label><input type="radio" name="satisfaction" value="5"><span>😕</span></label>
+                <label><input type="radio" name="satisfaction" value="6"><span>😐</span></label>
+                <label><input type="radio" name="satisfaction" value="7"><span>🙂</span></label>
+                <label><input type="radio" name="satisfaction" value="8"><span>😊</span></label>
+                <label><input type="radio" name="satisfaction" value="9"><span>😃</span></label>
+                <label><input type="radio" name="satisfaction" value="10"><span>😁</span></label>
+            </div>
+
+            <!-- Section dynamique si la note est <= 6 -->
+            <div id="details-section" class="hidden" style="text-align:center;">
+                <h3>Raison de votre insatisfaction :</h3>
+                <select name="reason">
+                    <option value="reservations">Prise en compte des réservations</option>
+                    <option value="payment">Service de paiement</option>
+                    <option value="complaints">Traitement des réclamations</option>
+                    <option value="other">Autres</option>
+                </select>
+                <textarea name="details" placeholder="Veuillez détailler votre insatisfaction..."></textarea>
+            </div>
+
+            <!-- Bouton pour soumettre avec l'effet fusée -->
+            <button type="submit" class="submit-btn" style="display:block;margin:20px auto;">🚀 Envoyer</button>
+        </form>
+    </div>
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("noterModal");
+    const openModalBtn = document.getElementById("openModalBtn");
+    const closeModalBtn = document.querySelector(".close");
+    const form = document.getElementById("satisfaction-form");
+    const detailsSection = document.getElementById("details-section");
+    const selectedScoreDisplay = document.createElement('div'); // Pour afficher la note sélectionnée
+    selectedScoreDisplay.classList.add('selected-score');
+
+    // Ajouter le div dans la section emoji
+    document.querySelector('.emoji-section').appendChild(selectedScoreDisplay);
+
+    // Ouvrir la modale
+    openModalBtn.addEventListener("click", function () {
+        modal.style.display = "block";
+    });
+
+    // Fermer la modale
+    closeModalBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    // Fermer la modale si on clique en dehors de celle-ci
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Gestion de la sélection des emojis
+    form.addEventListener("change", function (event) {
+        const selectedScore = form.querySelector('input[name="satisfaction"]:checked');
+        if (selectedScore) {
+            const scoreValue = parseInt(selectedScore.value);
+            selectedScoreDisplay.textContent = `Vous avez sélectionné la note : ${scoreValue}/10`; // Affiche la note sélectionnée
+
+            if (scoreValue <= 6) {
+                detailsSection.classList.remove("hidden");
+            } else {
+                detailsSection.classList.add("hidden");
+            }
+        }
+    });
+
+    // Soumission du formulaire
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Empêche l'envoi normal
+
+        alert("Merci pour votre retour !"); // Feedback rapide pour l'utilisateur
+
+        modal.style.display = "none"; // Fermer la modale après soumission
+
+        // Redirection vers la page principale avec l'apostrophe corrigée
+        window.location.href = "Test0'.html"; // Retour à la page principale
+    });
+});
+
+</script>
+    </footer>
+</body>
+
+</html
+</html>

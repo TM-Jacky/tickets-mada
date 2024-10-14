@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Client</title>
+    <link rel="stylesheet" href="EP_Test.css"> <!-- Incluez votre fichier CSS ici -->
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue dans votre espace client</h1>
+        <p>Votre email : <span id="user-email"></span></p>
+        <button id="logout-button">Se déconnecter</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Récupérer les informations de l'utilisateur à partir du localStorage
+            const userEmail = localStorage.getItem("userEmail");
+            const emailDisplay = document.getElementById("user-email");
+
+            if (userEmail) {
+                emailDisplay.textContent = userEmail;
+            } else {
+                // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+                window.location.href = "login.html"; // Changez cette URL selon vos besoins
+            }
+
+            // Gérer la déconnexion
+            const logoutButton = document.getElementById("logout-button");
+            logoutButton.addEventListener("click", function () {
+                localStorage.removeItem("userEmail"); // Supprime les informations de l'utilisateur
+                window.location.href = "login.html"; // Rediriger vers la page de connexion
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions Générales - Tickets Mada</title>
+</head>
+
+<style>
+/* Style global */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f0f0f0; /* Fond blanc cassé */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Entête */
+header {
+    background-color: #ffffff; /* Fond blanc pour l'entête */
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ccc; /* Bordure légère */
+}
+
+/* Style du titre principal */
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+
+/* Logo dans l'entête */
+header {
+    display: flex; /* Utilisation de flexbox pour aligner le contenu */
+    align-items: center; /* Centrage vertical du contenu */
+    background-color: #ffffff; /* Fond blanc pour l'entête */
+    color: #333;
+    padding: 20px;
+    border-bottom: 2px solid #ccc; /* Bordure légère */
+}
+
+header .logo {
+    width: 50px; /* Ajustez la largeur du logo selon vos préférences */
+    height: auto; /* Garder les proportions du logo */
+    margin-right: 15px; /* Espacement à droite du logo */
+}
+
+/* Section des conditions */
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alignement en haut */
+}
+
+.conditions {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease; /* Animation d'entrée */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.conditions h2 {
+    color: #009d49; /* Accent de couleur */
+    margin-bottom: 15px;
+    font-size: 24px;
+    border-bottom: 2px solid #d52b1e; /* Légère bordure */
+    padding-bottom: 5px;
+}
+
+.conditions p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Style du bouton */
+button {
+    padding: 10px 20px;
+    background-color: #009d49; /* Vert du drapeau de Madagascar */
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007a33; /* Vert plus foncé pour le survol */
+}
+
+/* Style global pour le footer */
+footer {
+    background-color: #ffffff; /* Fond blanc pour le footer */
+    color: #333;
+    padding: 30px 0;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Styles pour les colonnes de footer */
+.footer-column {
+    width: 30%;
+}
+
+.footer-column h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Pop-up styles */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.popup-content h2 {
+    margin-top: 0;
+    color: #009d49; /* Vert du drapeau de Madagascar */
+}
+
+.popup-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.popup-content ul li {
+    margin: 10px 0;
+}
+
+.popup-content ul li a {
+    color: #009d49;
+    text-decoration: none;
+}
+
+.popup-content ul li a:hover {
+    text-decoration: underline;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #d52b1e; /* Rouge du drapeau de Madagascar */
+}
+
+/* Footer toujours en bas */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+</style>
+
+<body>
+    <header>
+        <h1>Conditions Générales de Vente</h1>
+    </header>
+    
+    <main>
+        <section class="conditions">
+            <h2>1. Introduction</h2>
+            <p>Bienvenue sur Tickets Mada. Les présentes conditions générales de vente (CGV) régissent les réservations de voyages locaux et de transport terrestre effectuées via notre site Web ou par téléphone. En utilisant notre site et en réservant nos services, vous acceptez les présentes conditions. Nous vous recommandons de lire attentivement ces conditions avant de procéder à toute réservation. Nous nous réservons le droit de modifier ces conditions à tout moment, et nous vous encourageons à les consulter régulièrement.</p>
+
+            <h2>2. Réservation</h2>
+            <p>Les réservations de voyages et de services de transport doivent être effectuées via notre site Web ou par téléphone. Lors de la réservation, il est crucial de fournir des informations complètes et précises concernant votre itinéraire, les passagers, et vos coordonnées. Une fois la réservation effectuée, vous recevrez une confirmation par e-mail ou par téléphone. La réservation est considérée comme confirmée uniquement après réception et validation du paiement intégral. En cas d’erreur dans les informations fournies, nous ne pouvons garantir la disponibilité ou la validité de votre réservation.</p>
+
+            <h2>3. Annulation et Modifications</h2>
+            <p>Pour toute annulation ou modification de votre réservation, veuillez nous contacter le plus rapidement possible. Les conditions d'annulation et de modification varient en fonction de la nature du service réservé et du moment où la demande est effectuée. En général, les annulations faites plus de 48 heures avant le départ peuvent donner lieu à un remboursement partiel, tandis que les annulations effectuées moins de 48 heures avant le départ peuvent ne pas être remboursées. Les modifications, si elles sont possibles, peuvent également entraîner des frais supplémentaires. Veuillez consulter les conditions spécifiques applicables à chaque réservation pour plus de détails.</p>
+
+            <h2>4. Responsabilités</h2>
+            <p>Nous nous engageons à fournir des informations exactes et à jour sur nos services de transport. Cependant, nous ne sommes pas responsables des retards, annulations ou modifications de service dus à des circonstances indépendantes de notre volonté, telles que des conditions météorologiques extrêmes, des grèves ou des interruptions de service. Nous faisons de notre mieux pour vous informer rapidement des changements et pour trouver des solutions appropriées en cas de problème.</p>
+
+            <h2>5. Tarifs et Paiement</h2>
+            <p>Les tarifs des services de transport sont affichés sur notre site Web et sont susceptibles d’être modifiés en fonction de la disponibilité et des conditions du marché. Le paiement doit être effectué en totalité au moment de la réservation, sauf indication contraire. Nous acceptons plusieurs modes de paiement, et les détails des options disponibles sont fournis lors de la réservation. Les frais de transaction ou les taxes applicables seront également indiqués avant la confirmation de la réservation.</p>
+
+            <h2>6. Données Personnelles</h2>
+            <p>Nous collectons et traitons vos données personnelles conformément à notre politique de confidentialité. Les informations que vous nous fournissez sont utilisées pour traiter vos réservations, communiquer avec vous au sujet de vos voyages, et vous offrir un service client de qualité. Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données contre tout accès non autorisé.</p>
+
+            <h2>7. Propriété Intellectuelle</h2>
+            <p>Tous les contenus présents sur notre site, y compris les textes, images, logos, graphiques, et autres éléments, sont protégés par des droits d'auteur et de propriété intellectuelle. Vous ne pouvez pas reproduire, distribuer, ou utiliser ces contenus sans notre autorisation préalable. Toute utilisation non autorisée peut entraîner des poursuites judiciaires.</p>
+
+            <h2>8. Loi Applicable</h2>
+            <p>Les présentes conditions générales de vente sont régies par la législation en vigueur dans le pays où est situé notre siège social. En cas de litige, les tribunaux compétents seront ceux du lieu de notre siège social, sauf disposition légale contraire.</p>
+
+            <h2>9. Contact</h2>
+            <p>Pour toute question, préoccupation ou demande d'assistance concernant vos réservations ou nos services, vous pouvez nous contacter via notre site Web, par téléphone ou par e-mail. Nous nous engageons à répondre à vos demandes dans les plus brefs délais et à vous fournir l'assistance nécessaire pour garantir une expérience de voyage agréable et sans tracas.</p>
+
+            <button onclick="window.location.href='inscription.html'">Valider</button>
+        </section>
+    </main>
+    
+    <footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Nous connaitre</h3>
+            <ul>
+                <li><a href="en_savoir_plus.html">À propos de nous</a></li>
+                <li><a href="responsabilite_sociale_et_environnementale.html">Responsabilité Sociale et Environnementale</a></li>
+                <li><a href="demande_de_collaboration.html">Demande de collaboration</a></li>
+                <li><a href="noter_notre_prestation.html">Noter notre prestation</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Nos idées de voyage</h3>
+            <ul>
+                <li><a href="nos_destinations.html">Nos destinations</a></li>
+                <li><a href="nos_bons_plans.html">Nos bons plans</a></li>
+                <li><a href="voyage_sur_mesure.html">Voyage sur mesure</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Notre Service Client</h3>
+            <ul>
+                <li><a href="mailto:rakotomalalajacky09@gmail.com">Contactez-nous</a></li>
+                <li><a href="#" id="openPopup">Service de réclamation</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- Pop-up pour le service de réclamation -->
+<div id="popup" class="popup-container">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Service de Réclamation</h2>
+        <p>Contactez-nous via l'un des moyens suivants :</p>
+        <ul>
+            <li>Email: <a href="mailto:rakotomalalajacky09@gmail.com">Envoyer un email</a></li>
+            <li>Téléphone: <a href="tel:+261323857255">Appeler maintenant</a></li>
+            <li>WhatsApp: <a href="https://wa.me/261323857255" target="_blank">Nous contacter sur WhatsApp</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- JS to handle the pop-up -->
+<script src="footer.js"></script>
+</body>
+</html>

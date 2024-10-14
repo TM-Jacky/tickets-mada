@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets Mada - Page Principale</title>
+    <link rel="stylesheet" href="styles_test0.css">
+    <link rel="stylesheet" href="footer.css"> <!-- Footer styling -->
+</head>
+<body>
+    <!-- Menu latéral gauche -->
+<div id="menu-toggle" class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+<div id="sidebar" class="sidebar">
+    <ul>
+        <li><a href="Test1.html">Accueil</a></li>
+        <li><a href="en_savoir_plus.html">Tout savoir sur Tickets Mada</a></li>
+        <li>
+            <a href="#">Nos prestations</a>
+            <ul class="submenu">
+                <li><a href="#">Prendre en compte votre réservation</a></li>
+                <li><a href="#">Offrir un service de paiement sécurisé</a></li>
+                <li><a href="#">Être à l'écoute de vos réclamations</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Avec Tickets Mada</a>
+            <ul class="submenu">
+                <li><a href="#">Réservez en quelques clics</a></li>
+                <li><a href="#">Payer en toute sécurité</a></li>
+                <li><a href="#">Voyagez en harmonie</a></li>
+                <li><a href="#">Service client à votre écoute</a></li>
+                <li><a href="#">Historique de voyage</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+    <!-- Bannière principale -->
+ <div class="banner-container">
+    <div class="banner-content">
+        <h1 class="banner-title">Tickets Mada</h1>
+        <p class="banner-subtitle">Un service de qualité en échange de votre satisfaction</p>
+    </div>
+    <div class="banner-slider">
+        <img src="banniere_principale1.png" alt="Bannière 1" class="banner-image">
+        <img src="banniere_principale2.png" alt="Bannière 2" class="banner-image">
+        <img src="banniere_principale3.png" alt="Bannière 3" class="banner-image">
+    </div>
+</div>
+
+    <!-- Volets dynamiques droit -->
+    <div class="right-buttons">
+        <div class="help-btn" onclick="window.location.href='formulaire_de_contact.html'">
+            <span class="help-icon">?</span>
+        </div>
+        <div class="account-btn" onclick="toggleAccountMenu()">👤</div>
+        <div class="faq-btn" onclick="window.location.href='faq.html'">FAQ</div>
+    </div>
+
+    <!-- Volet dynamique de connexion -->
+    <div id="account-menu" class="account-menu">
+        <button onclick="window.location.href='connexion.html'">Connexion</button>
+        <button onclick="window.location.href='inscription.html'">Inscription</button>
+    </div>
+
+    <main>
+        <section class="welcome-section">
+            <p>Bienvenu chez <strong>Tickets Mada</strong><br/>
+<span class="stylish-message">Un service de qualité en échange de votre satisfaction</span>
+            </p>
+        </section>
+
+        <section class="services-section">
+            <div class="services-column">
+                <h2 class="toggle-title">Nos prestations :</h2>
+                <ul class="services-content">
+                    <li>Prendre en compte votre réservation</li>
+                    <li>Offrir un service de paiement sécurisé</li>
+                    <li>Être à l'écoute de vos réclamations</li>
+                </ul>
+            </div>
+            <div class="services-column">
+                <h2 class="toggle-title">Avec <em>Tickets Mada</em> :</h2>
+                <ul class="services-content">
+                    <li>Réservez en quelques clics</li>
+                    <li>Payer en toute sécurité</li>
+                    <li>Voyagez en harmonie avec vos mœurs et récoltez de joyeux souvenirs</li>
+                    <li>Ayez un service client à votre écoute en toutes circonstances</li>
+                    <li>Retrouvez vos historiques de voyage à tout moment</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <p><a href="connexion.html" class="reserve-button">Réserver</a></p>
+            
+        <section>
+            <a href="suggestion.html">Vos suggestions ?</a>
+        </section>
+    </main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Première ligne avec colonnes -->
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Nous connaitre</h3>
+                <ul>
+                    <li><a href="en_savoir_plus.html">À propos de nous</a></li>
+                    <li><a href="responsabilité_sociale_et_environnementale.html">Responsabilité Sociale et Environnementale</a></li>
+                    <li><a href="demande_de_collaboration.html">Demande de collaboration</a></li>
+                    <li><a href="noter_notre_prestation.html">Noter notre prestation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Nos idées de voyage</h3>
+                <ul>
+                    <li><a href="nos_destinations.html">Nos destinations</a></li>
+                    <li><a href="nos_bons_plans.html">Nos bons plans</a></li>
+                    <li><a href="voyage_sur_mesure.html">Voyage sur mesure</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Notre Service Client</h3>
+                <ul>
+                    <li><a href="mailto:rakotomalalajacky09@gmail.com">Contactez-nous</a></li>
+                    <li><a href="#" id="openPopup">Service de réclamation</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Deuxième ligne avec images et réseaux sociaux -->
+        <div class="footer-extra">
+            <!-- Application Section -->
+            <div class="footer-app">
+                <h3>L'application Tickets Mada</h3>
+                <a href="https://apps.apple.com" target="_blank"><img src="Images/image_app_store.png" alt="App Store" class="store-img"></a>
+                <a href="https://play.google.com" target="_blank"><img src="Images/image_google_play.png" alt="Google Play" class="store-img"></a>
+            </div>
+
+            <!-- Réseaux Sociaux Section -->
+            <div class="footer-social">
+                <h3>Restez informé(e)</h3>
+                <p>Réseaux sociaux</p>
+                <div class="social-icons">
+                    <a href="https://youtube.com" target="_blank"><img src="Images/youtube_icon.png" alt="YouTube" class="social-icon"></a>
+                    <a href="https://x.com" target="_blank"><img src="Images/x_icon.png" alt="X" class="social-icon"></a>
+                    <a href="https://facebook.com" target="_blank"><img src="Images/facebook_icon.png" alt="Facebook" class="social-icon"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="Images/instagram_icon.png" alt="Instagram" class="social-icon"></a>
+                    <a href="https://wa.me" target="_blank"><img src="Images/whatsapp_icon.png" alt="WhatsApp" class="social-icon"></a>
+                    <a href="https://tiktok.com" target="_blank"><img src="Images/tiktok_icon.png" alt="TikTok" class="social-icon"></a>
+                    <a href="https://linkedin.com" target="_blank"><img src="Images/linkedin_icon.png" alt="LinkedIn" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Pop-up pour le service de réclamation -->
+<div id="popup" class="popup-container">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Service de Réclamation</h2>
+        <p>Contactez-nous via l'un des moyens suivants :</p>
+        <ul>
+            <li>Email: <a href="mailto:rakotomalalajacky09@gmail.com">Envoyer un email</a></li>
+            <li>Téléphone: <a href="tel:+261340000000">Appeler maintenant</a></li>
+            <li>WhatsApp: <a href="https://wa.me/261340000000" target="_blank">Nous contacter sur WhatsApp</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- JS pour le pop-up -->
+<script src="footer.js"></script>
+
+    <!-- Index "Mon Avis" (ajouté à droite de la page) -->
+    <div id="feedback-index" class="feedback-index" onclick="openFeedbackPopup()">
+        <span>Mon Avis</span>
+    </div>
+
+    <!-- Pop-up d'avis utilisateur (à ajouter) -->
+    <div id="feedback-popup" class="feedback-popup hidden">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeFeedbackPopup()">×</span>
+
+            <!-- Partie 1 : Légende d'encouragement -->
+            <h2>Votre avis nous intéresse !</h2>
+            <p>Aidez-nous à améliorer notre site en partageant votre expérience.</p>
+
+            <!-- Partie 2 : Émojis pour la satisfaction -->
+            <div class="satisfaction">
+                <div class="emoji" data-value="1">😡</div>
+                <div class="emoji" data-value="2">😞</div>
+                <div class="emoji" data-value="3">😐</div>
+                <div class="emoji" data-value="4">😊</div>
+                <div class="emoji" data-value="5">😍</div>
+            </div>
+
+            <!-- Partie 3 : Formulaire qui s'affiche après sélection de l'émoji -->
+            <div id="feedback-form" class="feedback-form hidden">
+                <!-- Formulaire dynamique basé sur l'émoji sélectionné -->
+                <div class="feedback-options hidden">
+                    <label>
+                        <input type="radio" name="feedback-type" value="problemes"> Problèmes
+                    </label>
+                    <label>
+                        <input type="radio" name="feedback-type" value="suggestions"> Suggestions
+                    </label>
+                    <label>
+                        <input type="radio" name="feedback-type" value="compliments"> Compliments
+                    </label>
+                </div>
+
+                <!-- Sous-formulaire des problèmes -->
+                <div id="problemes-form" class="hidden">
+                    <label>
+                        <input type="checkbox" value="connexion"> Problème de connexion
+                    </label>
+                    <label>
+                        <input type="checkbox" value="lenteur"> Lenteur de chargement
+                    </label>
+                    <label>
+                        <input type="checkbox" value="autres"> Autres
+                    </label>
+                    <textarea placeholder="Veuillez décrire le problème..." class="hidden" id="autres-probleme-description"></textarea>
+                </div>
+
+                <!-- Interface pour Suggestions ou Compliments -->
+                <textarea id="suggestions-compliments" class="hidden" placeholder="Saisissez vos suggestions ou compliments"></textarea>
+            </div>
+
+            <!-- Bouton Envoyer -->
+            <button class="send-btn" id="send-feedback" disabled>Envoyer</button>
+        </div>
+    </div>
+
+    <!-- Pop-up de remerciement -->
+    <div id="thank-you-popup" class="thank-you-popup hidden">
+        <div class="popup-content">
+            <h2>Merci pour votre avis !</h2>
+            <p>Nous apprécions votre contribution à l'amélioration de notre site.</p>
+            <button onclick="closeThankYouPopup()">Fermer</button>
+        </div>
+    </div>
+
+    <!-- Script JS -->
+    <script src="mon_avis.js"></script>
+
+    <script src="scripts_test0.js"></script>
+</body>
+</html>

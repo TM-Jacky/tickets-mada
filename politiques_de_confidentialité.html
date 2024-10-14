@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - Tickets Mada</title>
+    <style>
+        /* Styles globaux */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Bannière fixe en haut */
+        header {
+            background: linear-gradient(to right, #e53935, #00c853);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            border-bottom: 3px solid #ddd;
+            z-index: 999;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .site-title {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        /* Contenu principal */
+        main {
+            padding-top: 120px;
+            margin: 0 auto;
+            max-width: 1200px;
+            width: 90%;
+        }
+
+        /* Section Politique de Confidentialité */
+        .privacy-policy {
+            position: relative;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            margin: 40px auto; /* Ajuste la marge */
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #e53935;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-text {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* Bouton Retour */
+        .back-to-home {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            background: linear-gradient(to right, #e53935, #ff7043);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background: linear-gradient(to right, #ff7043, #e53935);
+            transform: scale(1.05);
+        }
+
+        /* Global Styling for Footer */
+        footer {
+            background-color: rgba(255, 255, 255, 0.1); /* Fond transparent (léger) */
+            padding: 40px 20px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            backdrop-filter: blur(10px); /* Effet de flou pour améliorer la lisibilité */
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Footer Columns */
+        .footer-columns {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column {
+            flex: 1;
+            text-align: left;
+            margin: 0 20px;
+        }
+
+        .footer-column h3 {
+            color: #d52b1e; /* Rouge du drapeau de Madagascar */
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Extra Sections */
+        .footer-extra {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+
+        .footer-app, .footer-social {
+            flex: 1;
+            text-align: left;
+        }
+
+        .footer-app h3, .footer-social h3 {
+            color: #009d49; /* Vert du drapeau de Madagascar */
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-app .store-img {
+            width: 150px;
+            margin-right: 15px;
+        }
+
+        .footer-social p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons .social-icon {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .social-icons .social-icon:hover {
+            opacity: 0.8;
+        }
+
+        /* Pop-up Styles */
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .popup-content h2 {
+            color: #d52b1e;
+            margin-bottom: 20px;
+        }
+
+        .popup-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .popup-content ul li {
+            margin: 10px 0;
+        }
+
+        .popup-content a {
+            color: #009d49;
+            text-decoration: none;
+        }
+
+        .popup-content a:hover {
+            text-decoration: underline;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Ensuring footer stays at the bottom */
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Politique de Confidentialité</h1>
+    </header>
+    
+    <main>
+        <section class="privacy-policy">
+            <h2>1. Introduction</h2>
+            <p>Chez Tickets Mada, nous nous engageons à protéger votre vie privée. Cette politique de confidentialité explique comment nous recueillons, utilisons, et protégeons vos informations personnelles.</p>
+            
+            <h2>2. Informations Collectées</h2>
+            <p>Nous collectons des informations personnelles telles que votre nom, adresse e-mail, et détails de réservation lorsque vous utilisez notre site.</p>
+            
+            <h2>3. Utilisation des Informations</h2>
+            <p>Les informations que nous recueillons sont utilisées pour traiter vos réservations, améliorer nos services, et vous contacter en cas de besoin.</p>
+            
+            <h2>4. Protection des Données</h2>
+            <p>Nous mettons en œuvre des mesures de sécurité pour protéger vos informations contre l'accès non autorisé, la divulgation, ou la destruction.</p>
+            
+            <h2>5. Partage des Informations</h2>
+            <p>Nous ne partageons vos informations avec des tiers que si cela est nécessaire pour fournir nos services ou si la loi l'exige.</p>
+            
+            <h2>6. Vos Droits</h2>
+            <p>Vous avez le droit d'accéder, de corriger ou de supprimer vos informations personnelles en nous contactant.</p>
+            
+            <h2>7. Modifications de la Politique</h2>
+            <p>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Les changements seront publiés sur cette page.</p>
+            
+            <h2>8. Contact</h2>
+            <p>Pour toute question concernant notre politique de confidentialité, veuillez nous contacter via notre site.</p>
+            
+            <a href="Test0'.html" class="back-to-home">Retour à l'accueil</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Nous connaitre</h3>
+                <ul>
+                    <li><a href="en_savoir_plus.html">À propos de nous</a></li>
+                    <li><a href="responsabilité_sociale_et_environnementale.html">Responsabilité Sociale et Environnementale</a></li>
+                    <li><a href="demande_de_collaboration.html">Demande de collaboration</a></li>
+                    <li><a href="noter_notre_prestation.html">Noter notre prestation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Nos idées de voyage</h3>
+                <ul>
+                    <li><a href="nos_destinations.html">Nos destinations</a></li>
+                    <li><a href="nos_bons_plans.html">Nos bons plans</a></li>
+                    <li><a href="voyage_sur_mesure.html">Voyage sur mesure</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Notre Service Client</h3>
+                <ul>
+                    <li><a href="mailto:rakotomalalajacky09@gmail.com">Contactez-nous</a></li>
+                    <li><a href="#" id="openPopup">Service de réclamation</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pop-up pour le service de réclamation -->
+    <div id="popup" class="popup-container">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Service de Réclamation</h2>
+            <p>Contactez-nous via l'un des moyens suivants :</p>
+            <ul>
+                <li>Email: <a href="mailto:rakotomalalajacky09@gmail.com">Envoyer un email</a></li>
+                <li>Téléphone: <a href="tel:+261340000000">Appeler maintenant</a></li>
+                <li>WhatsApp: <a href="https://wa.me/261340000000" target="_blank">Nous contacter sur WhatsApp</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JS to handle the pop-up -->
+    <script src="footer.js"></script>
+</body>
+</html>

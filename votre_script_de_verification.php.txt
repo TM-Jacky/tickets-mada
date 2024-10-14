@@ -1,0 +1,17 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $recaptcha_secret = '6LdmuFcqAAAAAGuimxqeId4u5hPXt92_SlRGoEA_'; // Remplacez par votre clé secrète
+    $recaptcha_response = $_POST['g-recaptcha-response'];
+
+    // Vérifier la réponse de reCAPTCHA
+    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response");
+    $responseKeys = json_decode($response, true);
+
+    if (intval($responseKeys["success"]) !== 1) {
+        echo 'Vérification reCAPTCHA échouée. Veuillez réessayer.';
+    } else {
+        echo 'Vérification reCAPTCHA réussie. Connexion autorisée.';
+        // Redirection ou autre logique pour la connexion ici
+    }
+}
+?>
